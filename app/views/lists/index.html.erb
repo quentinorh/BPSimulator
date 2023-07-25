@@ -1,0 +1,21 @@
+<div  class="container" >
+  <h2 class="toptitle" >Mes listes</h1>
+
+  <div id="lists">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class: "listlist" do %>
+        <p class="list-title">
+          <%= list.name %>
+        </p>
+        <p>
+          User:
+          <%= list.user_lists.count %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= link_to new_list_path, class: "" do %>
+    <%= image_tag "add.png", class: "addbutton", alt: "" %>
+  <% end %>
+</div>
